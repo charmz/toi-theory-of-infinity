@@ -1,0 +1,36 @@
+# Formal Axiomatic Framework of Aristotle's *Metaphysics*
+
+## Introduction
+
+This document summarizes Aristotle's *Metaphysics* in the style prescribed by `gptmeta.txt`. It distills the key philosophical ideas into definitions, axioms, and a few derived propositions. The aim is to capture Aristotle's ontology and theory of causation in a concise formal manner while remaining faithful to the historical text.
+
+## Definitions
+
+* **Being (ὂν):** Whatever is, considered in its various modes. Aristotle distinguishes being by categories such as substance, quantity, quality, relation, place, time, position, state, action, and affection.
+* **Substance (οὐσία):** That which exists in itself and serves as the primary subject of predication. Individual substances are concrete beings; forms and matter are aspects of substance.
+* **Matter (ὕλη):** The potential component of a substance—the underlying stuff which, when combined with form, constitutes a particular being.
+* **Form (εἶδος):** The actuality or defining essence of a substance which gives matter its determinate character.
+* **Potentiality (δύναμις):** The capacity of matter to receive form or change. Potentiality becomes actuality through the agency of some cause.
+* **Actuality (ἐνέργεια):** The realized state of a substance when its potentiality is fully expressed.
+* **Cause (αἰτία):** An explanatory factor. Aristotle recognizes four causes: material, formal, efficient, and final.
+* **Unmoved Mover:** A purely actual substance that initiates motion without itself changing. It is the ultimate final cause of all motion.
+
+## Axioms
+
+1. **Hierarchy of Causes:** Every change or existence of a substance can be explained by four causes—material, formal, efficient, and final.
+2. **Primacy of Substance:** Being is said primarily of individual substances. Other categories (quantity, quality, etc.) depend on substances for their existence.
+3. **Principle of Non‑Contradiction:** A statement and its negation cannot both be true at the same time and in the same respect.
+4. **Potentiality Requires Actuality:** Whatever is in potentiality is brought into actuality only by something that is already actual.
+5. **Composition of Matter and Form:** Every sensible substance is a compound of matter and form; neither exists independently in the physical realm.
+6. **Existence of an Unmoved Mover:** There exists a first, unmoved mover that is pure actuality and serves as the ultimate final cause of all motion.
+7. **Teleology of Nature:** Natural substances act toward ends; final causes guide the development and motions of things.
+
+## Selected Propositions
+
+* **Substances as Subjects:** From Axioms 1, 2, and 5, each sensible entity is a unified subject composed of matter and form, which underlies all its properties.
+* **Causal Chains Terminate:** By Axioms 4 and 6, regress in efficient causes must end with the Unmoved Mover, ensuring a coherent account of motion.
+* **Unity of Science:** The investigation of being qua being (ontology) forms a single science because all categories relate back to substance and its causes.
+
+## Notes on Consistency
+
+Following the guidance in `gptmeta.txt`, these axioms can be interpreted in a classical first‑order framework. No contradictions arise if we treat substances as elements of a domain, causes as relations, and the Unmoved Mover as a distinguished element that remains unchanged. The axioms align with Aristotle’s original intent and provide a basis for deriving traditional metaphysical conclusions.
