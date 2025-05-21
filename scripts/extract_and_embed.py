@@ -11,7 +11,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 s3 = boto3.client('s3')
 milvus = MilvusClient(uri=os.getenv('MILVUS_URI'))
 
-bucket = 'your-research-bucket'
+bucket = 'toi-research-bucket'
 key = 'input/documents/relativity.pdf'
 
 # Download PDF from S3
