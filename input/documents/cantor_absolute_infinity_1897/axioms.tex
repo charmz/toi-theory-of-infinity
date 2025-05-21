@@ -1,23 +1,95 @@
-\begin{axiom}[Transfinite Unboundedness]
-\label{cantor1897:axiom1}
-For every number or set that is infinite (transfinite), there always exists a larger transfinite number beyond it. In other words, no highest or “ultimate” transfinite number can ever be attained. \textit{(This axiom formalizes Cantor’s insight that the creation of higher infinities never ends—given any infinite quantity, one can always find a larger one.)}
+\section*{Cantor's Theory of Transfinite Numbers and the Absolute Infinite (1897) -- Formal Axiomatic Framework}
+
+\subsection*{Introduction}
+This framework summarizes Cantor's 1897 exposition using modern notation while retaining his philosophical context. Definitions and axioms reflect Cantor's terminology; theorems follow from these assumptions.
+
+\subsection*{Definitions}
+\begin{definition}[Set or Aggregate]
+A \emph{set} (aggregate) is any well-defined collection of distinct elements. Two sets are equal iff they share exactly the same elements (Extensionality).
+\end{definition}
+%ID: Cantor.1897.Def1
+
+\begin{definition}[Equivalence and Power of Sets]
+Two sets $A$ and $B$ are \emph{equivalent} when there exists a one-to-one correspondence between their elements. The \emph{power} (cardinal number) $|A|$ of a set $A$ characterizes its size so that $|A|=|B|$ iff $A$ and $B$ are equivalent.
+\end{definition}
+%ID: Cantor.1897.Def2
+
+\begin{definition}[Transfinite Numbers -- Cardinals and Ordinals]
+A \emph{transfinite number} exceeds all finite numbers. A \emph{cardinal} measures the size of an infinite set, while an \emph{ordinal} describes the order type of a well-ordered set.
+\end{definition}
+%ID: Cantor.1897.Def3
+
+\begin{definition}[Number-Classes and Alephs]
+Ordinals are grouped into ascending \emph{number-classes}; each class corresponds to a new transfinite cardinal $\aleph_\mu$.
+\end{definition}
+%ID: Cantor.1897.Def4
+
+\begin{definition}[Absolute Infinite]
+The \emph{Absolute Infinite} $\Omega$ denotes an infinity beyond the entire transfinite sequence; it transcends all sets.
+\end{definition}
+%ID: Cantor.1897.Def5
+
+\subsection*{Axioms}
+\begin{axiom}[Existence of Sets and Extensionality]
+There exists an infinite set (e.g. $\mathbb{N}$). Sets are determined solely by their elements: if $\forall x\,(x\in A\Leftrightarrow x\in B)$, then $A=B$.
 \end{axiom}
 %ID: Cantor.1897.Axiom1
 
-\begin{axiom}[Absolute Infinity Unattainable]
-\label{cantor1897:axiom2}
-The \emph{Absolute Infinity} $\Omega$ cannot be reached or even approximated by any sequence of increasing transfinite numbers. $\Omega$ does not exist as a set or completed totality within the mathematical universe; it can only be \emph{acknowledged} as an ideal concept, never fully \emph{comprehended} or concretely realized. \textit{(This axiom captures Cantor’s assertion that no matter how far one progresses in the transfinite hierarchy, one is still no closer to grasping the Absolute Infinity. $\Omega$ is not a regular mathematical object but an idea—the “true infinite” recognized only in principle, not in constructive reality.)}
+\begin{axiom}[Equinumerosity and Cardinal Comparison]
+Every set has a definite cardinal number, and any two sets can be compared in size: for sets $A,B$ exactly one of $|A|<|B|$, $|A|=|B|$, or $|A|>|B|$ holds.
 \end{axiom}
 %ID: Cantor.1897.Axiom2
 
-\begin{axiom}[Inexhaustibility of the Transfinite]
-\label{cantor1897:axiom3}
-Given any transfinite number $\alpha$, the collection of all numbers beyond $\alpha$ is just as “absolutely infinite” as the collection of all numbers from the beginning. In other words, even after advancing to some higher infinity $\alpha$, there remain infinitely many further transfinite numbers undiminished in their total potency (no portion of the sequence exhausts the infinite progression). \textit{(This axiom emphasizes that the transfinite sequence never loses its endless character: after any point $\alpha$, the “remaining” infinity of numbers is equally as large as the whole, reflecting Cantor’s idea that every segment of the ordinals or cardinals beyond a given point has the same unlimited richness as the full universe of discourse.)}
+\begin{axiom}[Generation of Transfinite Ordinals]
+For every ordinal $\alpha$ there exists a successor $\alpha^+$, and every increasing sequence of ordinals has a limit ordinal beyond it.
 \end{axiom}
 %ID: Cantor.1897.Axiom3
 
-\begin{axiom}[Absolute Unity and Divine Infinity]
-\label{cantor1897:axiom4}
-There exists one unique \emph{Absolutely Infinite} entity $\Omega$ which transcends all relative (created) infinities. This $\Omega$ is an actual infinite of the highest order: it admits no limitation or “determination” and is not comparable to any transfinite number. In Cantor’s view, $\Omega$ exists only in the realm of the divine (the “true infinite” realized solely \emph{in Deo}), never as a finite or mathematical object. \textit{(This axiom formalizes Cantor’s identification of the absolutely infinite with a unique, Godlike infinity beyond all set-theoretic hierarchies. It asserts that all other infinities are subordinate or relative, whereas $\Omega$ alone is the all-encompassing infinite, not subject to the constraints of the created mathematical universe.)}
+\begin{axiom}[Well-Ordering and Ordinal Assignment]
+Every set can be well-ordered and is therefore order-isomorphic to a unique ordinal representing its enumeration type.
 \end{axiom}
 %ID: Cantor.1897.Axiom4
+
+\begin{axiom}[Transfinite Arithmetic]
+Ordinal arithmetic (addition, multiplication, exponentiation) and cardinal arithmetic extend consistently to transfinite numbers.
+\end{axiom}
+%ID: Cantor.1897.Axiom5
+
+\begin{axiom}[Hierarchy of Infinities]
+Transfinite numbers form an endless hierarchy of number-classes indexed by the alephs $\aleph_0,\aleph_1,\ldots$ with no maximal class.
+\end{axiom}
+%ID: Cantor.1897.Axiom6
+
+\begin{axiom}[Absolute Infinity Axiom]
+No universal set or set of all ordinals exists; such totalities are treated as proper classes transcending the universe of sets.
+\end{axiom}
+%ID: Cantor.1897.Axiom7
+
+\subsection*{Theorems}
+\begin{theorem}[Countable Sets and $\aleph_0$]
+The natural numbers $\mathbb{N}$ have the smallest infinite cardinality $\aleph_0$. Any countable union of countable sets is countable.
+\end{theorem}
+%ID: Cantor.1897.Thm1
+
+\begin{theorem}[Uncountability of the Continuum]
+The real numbers $\mathbb{R}$ have cardinality $2^{\aleph_0}$, strictly greater than $\aleph_0$; hence $\mathbb{R}$ is uncountable.
+\end{theorem}
+%ID: Cantor.1897.Thm2
+
+\begin{theorem}[Cantor's Power-Set Theorem]
+For any set $A$, the power-set $\mathcal{P}(A)$ has strictly larger cardinality than $A$: $|\mathcal{P}(A)|>|A|$.
+\end{theorem}
+%ID: Cantor.1897.Thm3
+
+\begin{theorem}[No Maximum Transfinite Number]
+There is no largest ordinal or cardinal. For every ordinal $\alpha$ there exists a larger ordinal $\alpha^+$, and for each cardinal $\kappa$ there is a larger cardinal.
+\end{theorem}
+%ID: Cantor.1897.Thm4
+
+\begin{theorem}[Ordinal Arithmetic Properties]
+Transfinite ordinal arithmetic is associative and distributive but not commutative; cardinal arithmetic for infinite cardinals is commutative.
+\end{theorem}
+%ID: Cantor.1897.Thm5
+
+\subsection*{Commentary}
+Cantor's axioms align with modern set theory (ZFC) augmented by proper classes. The Absolute Infinite represents a metaphysical ideal rather than a set.
