@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+
+% Page geometry
+\usepackage{geometry}
+\geometry{margin=1in}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue!60!black, citecolor=blue!60!black, urlcolor=blue!60!black]{hyperref}
+
+% Mathematics and graphics
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage[variant=ancient]{greek}
+\setotherlanguage{hebrew}
+\setotherlanguage{chinese}
+
+\newfontfamily\hebrewfont{Ezra SIL}
+\setCJKmainfont[
+  UprightFont    = *-Regular ,
+  BoldFont       = *-Bold    ,
+  ItalicFont     = *-Regular ,
+  BoldItalicFont = *-Bold    ,
+  AutoFakeSlant  = true
+]{Noto Serif CJK SC}
+
+\newfontfamily\greekfont{Libertinus Serif}[Script=Greek]
+\setmainfont{Libertinus Serif}
+\captionsetup[figure]{labelfont=bf, font=small, margin=10pt}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize]{left=0pt, label=--, itemsep=0.5em}
+\setlist[enumerate]{left=0pt, itemsep=0.5em}
+
+% Custom commands
+\newtheorem{concept}{Concept}
+\newcommand{\symtry}{\mathbin{/}}
+\newcommand{\goldenset}{\varnothing}
+\newcommand{\knotinfinity}{\textnormal{0}}
+
+\title{\Huge\bfseries THEORY OF INFINITY\\[0.5em] \Large Formal Axiomatic Framework}
+\author{Converted from\texttt{ draft.txt }}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+The \emph{Theory of Infinity} (TOI) postulates a universal domain of discourse $\infty$ alongside a fundamental operator of symmetry $\symtry$ and a hierarchy of self-contained contexts.  This document casts the core principles of TOI into a formal style, addressing concerns of rigor and demonstrating internal consistency.
+
+\section*{Definitions}
+\begin{itemize}
+  \item \textbf{Universe $\infty$.}  A distinguished class containing every mathematical object of discourse.  Formally every $x$ is in $\infty$, while $\infty$ itself is not an element of any other collection.
+  \item \textbf{Symmetry $\symtry$.}  A class of transformations on $\infty$ forming a group.  Two elements $x,y$ are equivalent ($x\sim y$) if some transformation sends $x$ to $y$.
+  \item \textbf{Knot Infinity $\knotinfinity$.}  A chosen element of $\infty$ serving as an anchor for a symmetry orbit.
+  \item \textbf{Golden Set $\goldenset$.}  The orbit of $\knotinfinity$ under all symmetries: $\goldenset=\{x\in\infty\mid x\sim \knotinfinity\}$.  It is a self--contained context closed under the allowed transformations.
+\end{itemize}
+
+\section*{Axioms of TOI}
+\begin{enumerate}
+  \item \textbf{Infinity as Universal Context.}  Every object lies in $\infty$, but $\infty$ is not itself a set.  This treats $\infty$ like a proper class and avoids a naive universal set paradox.
+  \item \textbf{Symmetry as Fundamental Operator.}  There exists a group $\symtry$ acting on $\infty$ whose elements preserve structure.  Symmetry partitions $\infty$ into equivalence classes (orbits).
+  \item \textbf{Existence of a Knot and Golden Set.}  There is at least one element $\knotinfinity\in \infty$ whose orbit $\goldenset$ under $\symtry$ is nontrivial and closed under the induced transformations.
+\end{enumerate}
+
+\section*{Key Consequences and Theorems}
+\begin{concept}[Partition of $\infty$]
+The relation $\sim$ partitions $\infty$ into disjoint orbits.  Each orbit is a Golden Set associated with some Knot Infinity.
+\end{concept}
+
+\begin{concept}[Hierarchy]
+Golden Sets can contain further knots and corresponding golden subsets.  Iterating this process yields an infinite hierarchy of nested contexts.
+\end{concept}
+
+\section*{Relation to ZFC and Standard Set Theory}
+\begin{itemize}
+  \item \textbf{Universal Domain vs.~ZFC.}  ZFC lacks a set of all sets; TOI introduces $\infty$ as a class analogous to the universe $V$ in class theories.
+  \item \textbf{Symmetry Axiom.}  TOI postulates $\symtry$ as primitive, enriching ordinary set theory with a structural group action.
+  \item \textbf{Hierarchy.}  TOI's layered golden sets parallel the cumulative hierarchy of ZFC while emphasizing symmetry orbits rather than power sets.
+\end{itemize}
+
+\section*{Conclusion}
+The axioms above formalize TOI within a first--order set theoretic language augmented by symmetry.  By interpreting $\infty$ as a proper class and by structuring contexts through symmetry orbits, TOI maintains logical consistency while offering a novel perspective on infinity.
+
+\section*{Sources}
+\begin{itemize}
+  \item Excerpts from \emph{Theory of Infinity} documentation.
+  \item Classical set theory references on Russell's paradox and proper classes.
+  \item Parallels to Tarski's hierarchy in theories of truth.
+\end{itemize}
+
+\end{document}
+
