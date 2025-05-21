@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+
+% Page geometry
+\usepackage{geometry}
+\geometry{margin=1in}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue!60!black, citecolor=blue!60!black, urlcolor=blue!60!black]{hyperref}
+
+% Mathematics and fonts
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+\newfontfamily\greekfont{Libertinus Serif}[Script=Greek]
+\setmainfont{Libertinus Serif}
+\captionsetup[figure]{labelfont=bf, font=small, margin=10pt}
+
+% List settings
+\usepackage{enumitem}
+\setlist[itemize]{left=0pt, label=--, itemsep=0.5em}
+\setlist[enumerate]{left=0pt, itemsep=0.5em}
+
+% Custom definitions from the TOI framework
+\newtheorem{concept}{Concept}
+\newcommand{\symtry}{\mathbin{/}}
+\newcommand{\goldenset}{\varnothing}
+\newcommand{\knotinfinity}{\textnormal{0}}
+
+\title{\Huge\bfseries Evaluating Kepler's \emph{Harmonies of the World}\\[0.5em] \Large A TOI Perspective}
+\author{\small Based on \texttt{framework.tex} and \texttt{draft.tex}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+Johannes Kepler's \emph{Harmonies of the World} proposes that planetary motions follow musical ratios and that cosmic order can be understood through geometry and proportion. The \emph{Theory of Infinity} (TOI) formalizes a universal domain $\infty$, a fundamental symmetry operator $\symtry$, and nested \emph{Golden Sets} $\goldenset$ built from \emph{Knot Infinity} $\knotinfinity$. This brief analysis highlights where Kepler's vision resonates with TOI's core ideas.
+
+\section*{Geometric Harmony and Symmetry}
+Kepler relates the five regular solids to planetary spheres, seeking a cosmic pattern. In TOI, symmetry $\symtry$ acts on all of $\infty$ and partitions it into orbits. Both views emphasize structure arising from invariant relations---Kepler through geometric ratios, TOI through symmetry classes. Kepler's insistence on a harmonious arrangement mirrors the TOI axiom that every context derives from symmetry invariance.
+
+\section*{Nested Contexts}
+Kepler's text often treats the heavens as layered spheres influencing one another. TOI formalizes a hierarchy where each \goldenset{} encloses a self-contained context anchored at some \knotinfinity. This layered approach parallels Kepler's nested celestial harmonies: each planet's motion forms part of a larger cosmic counterpoint. Where Kepler uses musical metaphors, TOI provides a set-theoretic language for describing how such layers interact without paradox.
+
+\section*{Mathematical Ideal and Universality}
+Kepler invokes divine perfection behind astronomical order. TOI expresses a similar quest for universality via the class $\infty$ which contains every mathematical object yet remains outside any particular context. By interpreting Kepler's harmony through TOI, we see his search for a single lawful structure echoed in the symmetry-driven construction of contexts that together approximate a universal order.
+
+\section*{Conclusion}
+Kepler's harmonies anticipate a world governed by invariants and ratios. TOI abstracts these notions into a modern formal framework centered on symmetry and nested contexts. While Kepler employed geometry and music as guiding metaphors, TOI employs set theory and group action to articulate comparable ideas. Their overlap suggests a continuity of thought: from early modern cosmic harmony to a contemporary mathematical vision of infinity.
+
+\end{document}
