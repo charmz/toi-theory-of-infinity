@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue!60!black, citecolor=blue!60!black, urlcolor=blue!60!black]{hyperref}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\title{\Huge\bfseries Formal Axiomatic Framework of Kepler's \emph{Harmonices Mundi} (1618)}
+\author{Converted from\texttt{ axioms.txt }}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+Kepler's \emph{Harmonices Mundi} unites geometry, astronomy and music under a divine design.\footnote{See the translation in \texttt{harmonies-of-the-world.tex}.} This document follows the policy in \texttt{gptlatex.txt} to cast his ideas into modern axiomatic form.  We summarize Kepler's worldview and outline how each axiom mirrors his text while noting where it diverges from modern science.
+
+\section*{Definitions of Key Concepts and Terms}
+\begin{itemize}
+  \item \textbf{Planet / Planetary Sphere.} A celestial body orbiting the Sun together with its orbital path.  Kepler's system contains exactly six: Mercury $(P_1)$ through Saturn $(P_6)$.
+  \item \textbf{Platonic Solid (Regular Polyhedron).} One of the five regular solids (cube, tetrahedron, dodecahedron, icosahedron, octahedron) used to separate consecutive planetary orbits.
+  \item \textbf{Harmonic Consonance (Musical Interval).} A ratio $\tfrac{m}{n}$ of small integers (e.g. $2{:}1,3{:}2,4{:}3,5{:}4,6{:}5,9{:}8$) regarded as musically harmonious.  A planet ``produces'' a consonance if a speed ratio in its motion equals that ratio.
+  \item \textbf{Extreme Orbital Speeds.} For each planet let $v_{\min}$ and $v_{\max}$ be its minimum and maximum orbital speeds (aphelion and perihelion).  The ratio $v_{\max}/v_{\min}$ reflects its orbital eccentricity.
+  \item \textbf{Mode / Scale.}  A collection of consonant intervals arising from a planet's motion; Kepler mostly discusses single intervals rather than full scales.
+  \item \textbf{Voice Register (Soprano, Alto, Tenor, Bass).}  A poetic classification of planets by the absolute pitch of the tones derived from their orbital speeds: Mercury is Soprano, Venus and Earth Alto, Mars Tenor, Jupiter and Saturn Bass.
+\end{itemize}
+
+\section*{Axioms of the Keplerian Harmony System}
+\begin{enumerate}
+  \item \textbf{Axiom 1 (Finite Planetary System).} There exist exactly six planetary orbits $P_1,\ldots,P_6$ around the Sun and no additional planets beyond Saturn.
+  \item \textbf{Axiom 2 (Platonic Orbital Architecture).} The radii of consecutive planetary spheres are related by the five regular Platonic solids: the orbit of $P_i$ is inscribed in a solid $S$ which is inscribed in the orbit of $P_{i+1}$.
+  \item \textbf{Axiom 3 (Harmonic Law of Planetary Motion).} For each planet $P_i$ the ratio $\tfrac{v_{\max}(P_i)}{v_{\min}(P_i)}$ equals a small-integer consonance ratio.
+  \item \textbf{Axiom 4 (Universality of Musical Consonances).} Every consonant ratio in the musical scale occurs among the planetary motions, either within a single orbit or between pairs of planets.
+  \item \textbf{Axiom 5 (Planetary Choir Alignment).} The six planets are ordered by pitch into voice registers: Mercury (soprano), Venus and Earth (alto), Mars (tenor), Jupiter and Saturn (bass).
+\end{enumerate}
+
+\section*{Derived Theorems and Propositions}
+\begin{proposition}[Orbital Consonance Values]
+Each planet's consonance interval is determined by its orbital eccentricity.  Using observed data one finds approximate ratios:\newline
+Mercury $\sim1.5$ (minor seventh), Venus $\sim1.01$ (nearly unison), Earth $\sim1.034$ (semitone), Mars $\sim1.22$ (minor third), Jupiter $\sim1.10$ (whole tone), Saturn $\sim1.12$ (whole tone).
+\end{proposition}
+
+\begin{proposition}[Voice Allocation Verified]
+Mercury's wide interval and high speed place it in the soprano range; Venus and Earth with nearly constant speed occupy the alto range; Mars fits tenor; Jupiter and Saturn, slowest and with whole-tone intervals, are bass.
+\end{proposition}
+
+\begin{proposition}[Consonant ``Chords'' of the Planets]
+At certain moments at least four planets can simultaneously produce consonant ratios, analogous to a musical chord in four-part counterpoint.
+\end{proposition}
+
+\begin{theorem}[Kepler's Third Law -- Harmonic Proportion of Periods]
+For any planets $P_i$ and $P_j$,
+\[\left(\tfrac{T_i}{T_j}\right)^2 = \left(\tfrac{R_i}{R_j}\right)^3.\]
+This relation follows from combining the geometric spacing (Axiom~2) with the harmonic speed ratios (Axiom~3).
+\end{theorem}
+
+\begin{proposition}[Consistency and Closure]
+Kepler's axioms do not contradict classical geometry or the physics known in 1618.  In limiting cases (e.g. eccentricity $e\to0$) they reduce to trivial consonances, showing logical coherence.
+\end{proposition}
+
+\section*{Discussion and Modern Perspective}
+Kepler's axiomatic harmony forms a finite, orderly cosmos unlike the infinite hierarchies of modern frameworks such as the Theory of Infinity.  While his Platonic solids axiom is now known to be numerological, his third law endures as a true physical principle.  The system illustrates how aesthetic ideas of harmony guided early scientific discovery.
+
+\end{document}
+
