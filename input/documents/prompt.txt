@@ -1,0 +1,84 @@
+## Research Prompt:
+
+### Objective
+
+Create a single LaTeX-formatted conceptual summary page structured exactly as shown in the provided Symmetry example. Each concept page must rigorously meet the following criteria:
+
+### Structure Requirements:
+
+#### 1. **Concept Definition**
+
+Provide a concise yet comprehensive semi-column separated list of historically and academically sourced context segments that together clearly outline the scope, depth, and interdisciplinary relevance of the concept. Each semi-colon-separated phrase should succinctly tie to specific, authoritative sources (e.g., primary philosophical works, foundational scientific articles, canonical texts).
+
+#### 2. **Bibliography (BibTeX entries)**
+
+Each source cited in the Concept Definition must have a corresponding BibTeX entry formatted precisely in the style demonstrated in the provided example. Each entry should contain an author, title, journal/book, year, and a detailed **note** explicitly linking the source’s ideas, quotes, or insights directly to the Theory of Infinity (**TOI**) framework, showing why and how each source supports or illustrates the concept within TOI.
+
+**Note Requirements:**
+
+* Clearly contextualize how the source aligns with or evidentially supports the concept within TOI.
+* Be precise and illustrative, highlighting specific quotes or ideas.
+
+#### 3. **Footnote (Single Comprehensive Footnote)**
+
+Craft a single, integrative footnote (approximately one-third of a LaTeX page) synthesizing insights from all cited sources. This footnote should clearly tie together historical evidence, philosophical contexts, scientific theories, and spiritual or cognitive insights from the bibliography to articulate a coherent, high-level synopsis of the concept’s significance within TOI.
+
+**Footnote Requirements:**
+
+* Concise synthesis of interdisciplinary insights.
+* Explicitly explain how each piece of evidence collectively contributes to understanding the concept in the TOI context.
+* Maintain intellectual rigor and readability, similar in depth and scope to the provided Symmetry example.
+
+#### 4. **Extended Definition**
+
+Create a concise and clearly phrased short paragraph that distills the synthesized evidence from the footnote into a clear, standalone definition. This extended definition must reflect the breadth and depth captured in the overall synopsis, clearly framing the concept within the overarching Theory of Infinity.
+
+**Extended Definition Requirements:**
+
+* Brief yet comprehensive.
+* Clearly derived from the evidence and insights summarized in the comprehensive footnote.
+* Easily understandable, yet philosophically and scientifically robust.
+
+#### 5. **Image Caption**
+
+Include an insightful, value-adding caption for an associated representative image. This caption must elegantly link the concept’s Extended Definition to the image in a way that visually enriches the reader's understanding. The caption should make explicit how the visual symbolism or illustration complements or deepens comprehension of the extended definition in a manner that text alone could not achieve.
+
+**Caption Requirements:**
+
+* Short, meaningful, and visually descriptive.
+* Directly ties to and reinforces the Extended Definition.
+
+---
+
+### LaTeX Template Example (Model to follow exactly):
+
+```latex
+\textbf{ConceptName (\( symbol \))}\footnote{Single comprehensive footnote synthesizing interdisciplinary evidence and context.}
+\label{def:concept_label} --- Source1~\cite{key1}; Source2~\cite{key2}; Source3~\cite{key3}; ... ; SourceN~\cite{keyN}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[c]{0.6\textwidth}
+        \Large\raggedright
+        \textit{Short poetic or symbolic description highlighting the essence of the concept.}\\[1em]
+    \end{minipage}    
+    \hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \includegraphics[width=\linewidth]{path/to/image.jpg} 
+    \end{minipage}
+\end{figure}
+
+Extended definition clearly derived from evidence and synthesized insights. It captures the concept's philosophical, scientific, and interdisciplinary significance succinctly and accurately, linking directly to the TOI framework.
+```
+
+---
+
+### Deliverable
+
+A single, LaTeX-formatted page structured exactly as demonstrated in the provided example (Symmetry), ready for insertion into an academic paper or research compilation.
+
+---
+
+### How to Respond:
+
+When returning the deliverable, provide the fully populated LaTeX-formatted page including all specified elements (Definition, Bibliography sources with notes, Footnote, Extended Definition, Image caption). Ensure rigorous adherence to the format and content standards outlined in this research prompt.
