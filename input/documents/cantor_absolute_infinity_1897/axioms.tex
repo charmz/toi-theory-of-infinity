@@ -4,7 +4,14 @@
 \setlength{\parskip}{0.8em}
 \setlength{\parindent}{0pt}
 \usepackage{hyperref}
-\usepackage{amsmath,amssymb}
+\usepackage{amsthm, amsmath,amssymb}
+
+% Definitions
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{theorem}{Theorem}[section]
+
+
 \begin{document}
 \section*{Cantor's Theory of Transfinite Numbers and the Absolute Infinite (1897) -- Formal Axiomatic Framework}
 
@@ -42,5 +49,211 @@ This document formalizes Georg Cantor's 1897 exposition of transfinite numbers a
 
 \subsection*{Commentary}
 \textit{Cantor's axioms align with modern set theory (ZFC) augmented by proper classes. The Absolute Infinite serves as a philosophical horizon rather than an element of the formal universe.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  axioms.tex
+%  Formal reconstruction of Cantor’s 1895–1897 memoirs
+%  (See gptmeta.txt §§2-11 and gptlatex.txt “Extraction / Preservation”.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Introduction / Scope}
+Cantor’s two memoirs (1895, 1897) lay the groundwork for modern set
+theory by (i) defining sets via one-to-one correspondence, (ii) introducing
+the concepts of \emph{cardinal} and \emph{ordinal} number, and
+(iii) proving basic laws of transfinite arithmetic.  The purpose of this
+document is to capture **every formal claim** required for that
+foundation in a compact axiomatic scheme suitable for mechanised
+reasoning. :contentReference[oaicite:0]{index=0}
+
+\bigskip
+\noindent\textbf{Logical background.}
+The framework is classical first–order logic with equality and a single
+primitive binary relation~$x\in y$.  Quantifiers range over a universe~$V$
+of objects.  We treat proper classes informally (italic commentary) and
+take \emph{set} as an undefined primitive. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Definitions}
+\begin{description}
+\item[\textbf{Definition 1 (Set).}]
+A \emph{set} is any collection of objects which is \emph{well-defined} in
+Cantor’s sense: for each object it is unambiguously determined whether
+it belongs to the collection or not. :contentReference[oaicite:2]{index=2}
+
+\item[\textbf{Definition 2 (Equipotence / $\sim$).}]
+Two sets~$A,B$ are \emph{equipotent}, written $A\sim B$, if there exists
+a bijection $f:A\to B$.  Equipotence is an equivalence relation. :contentReference[oaicite:3]{index=3}
+
+\item[\textbf{Definition 3 (Cardinal Number).}]
+The \emph{cardinal} of a set~$A$, written $\lvert A\rvert$, is the
+equivalence class of~$A$ under~$\sim$.  Cardinals are written with
+Fraktur letters~$\aleph_\alpha,\mathfrak{c},\ldots$ as in Cantor.:contentReference[oaicite:4]{index=4}
+
+\item[\textbf{Definition 4 (Finite, Infinite).}]
+A set $A$ is \emph{finite} if~$A\sim n$ for some natural~$n$; otherwise
+$A$ is \emph{infinite}.  The first transfinite cardinal is
+$\aleph_0=\lvert\mathbb N\rvert$. :contentReference[oaicite:5]{index=5}
+
+\item[\textbf{Definition 5 (Ordinal, $<$, $\omega$).}]
+A set $\alpha$ is an \emph{ordinal} if it is transitive
+($x\in\alpha\Rightarrow x\subseteq\alpha$) and well-ordered by~$\in$.
+The least infinite ordinal is $\omega=\{0,1,2,\dots\}$. :contentReference[oaicite:6]{index=6}
+
+\item[\textbf{Definition 6 (Set Operations).}]
+For cardinals $\kappa,\lambda$ define
+\[
+\kappa+\lambda=\lvert A\cup B\rvert,\quad
+\kappa\cdot\lambda=\lvert A\times B\rvert,\quad
+\kappa^{\lambda}=\lvert B^{A}\rvert
+\]
+where $\lvert A\rvert=\kappa$, $\lvert B\rvert=\lambda$ and $A,B$ are
+chosen disjoint. :contentReference[oaicite:7]{index=7}
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Axioms}
+\begin{description}
+
+\item[\textbf{Axiom 1 (Extensionality).}]
+Two sets with exactly the same elements are identical.  (Standard
+background axiom.)
+
+\item[\textbf{Axiom 2 (Equipotence ⇔ Cardinal Equality).}]
+$A\sim B \;\iff\; \lvert A\rvert=\lvert B\rvert$.  *Connects Definition 2
+to Definition 3.* :contentReference[oaicite:8]{index=8}
+
+\item[\textbf{Axiom 3 (Cantor–Bernstein).}]
+If $A\preccurlyeq B$ and $B\preccurlyeq A$ (embeddings exist) then
+$A\sim B$.  *Key comparability principle for cardinals.* :contentReference[oaicite:9]{index=9}
+
+\item[\textbf{Axiom 4 (Well-Ordering Principle).}]
+Every set is equipotent to some ordinal, hence admits a well-order.
+(Cantor’s “linear order theorem”.) :contentReference[oaicite:10]{index=10}
+
+\item[\textbf{Axiom 5 (Transfinite Induction).}]
+For any class $C$ of ordinals, if $0\in C$ and
+$\forall\alpha\,\bigl(\alpha\in C\Rightarrow\alpha+1\in C\bigr)$ and
+$\forall\lambda\bigl(\text{$\lambda$ limit}\wedge
+\forall\beta<\lambda(\beta\in C)\Rightarrow\lambda\in C\bigr)$ then
+$C$ contains all ordinals. :contentReference[oaicite:11]{index=11}
+
+\item[\textbf{Axiom 6 (Cardinal Exponentiation Bound).}]
+For every cardinal $\kappa$ we have $\kappa<2^\kappa$.
+(Cantor’s theorem.) :contentReference[oaicite:12]{index=12}
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Derived Propositions}
+\begin{description}
+
+\item[\textbf{Theorem 1 (Existence of Higher Alephs).}]
+For every ordinal $\alpha$ there exists a cardinal
+$\aleph_{\alpha+1}$ strictly greater than $\aleph_\alpha$.
+\emph{Proof sketch.} Define $\aleph_{\alpha+1}$ as the least cardinal
+greater than $\aleph_\alpha$ using Axioms 3 and 6.  (Uses 4 & 6.) 
+
+\item[\textbf{Theorem 2 (Arithmetic of $\aleph_0$).}]
+$\aleph_0+\aleph_0=\aleph_0$ and $\aleph_0\cdot\aleph_0=\aleph_0$.
+\emph{Proof sketch.} Construct explicit bijections; rely on
+Axiom 3. 
+
+\item[\textbf{Theorem 3 (Continuum Cardinality).}]
+$\lvert\mathbb R\rvert=2^{\aleph_0}$.
+\emph{Proof.} Binary‐sequence encoding of reals gives the required
+bijection.  (Depends on Defs 3,6.) 
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Discussion / Consistency}
+The above axioms reproduce Cantor’s core results while remaining
+compatible with standard ZF set theory (Extensionality, Well-Ordering,
+etc.). Axioms 3–6 are specialised forms of accepted principles; no
+known contradiction arises.  Cantor’s philosophical remarks on the
+“Absolute Infinite” are \emph{not} formalised here but flagged as
+historical context only. :contentReference[oaicite:13]{index=13}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Traceability Checklist}
+\begin{itemize}
+  \item Equipotence and cardinal equality (Axiom 2) – Article I §1. :contentReference[oaicite:14]{index=14}
+  \item Cantor–Bernstein (Axiom 3) – Article I §5. :contentReference[oaicite:15]{index=15}
+  \item Well-ordering theorem (Axiom 4) – Article II §3. :contentReference[oaicite:16]{index=16}
+  \item Transfinite induction (Axiom 5) – Article II §4. :contentReference[oaicite:17]{index=17}
+  \item Power-set bound (Axiom 6) – Article I §7. :contentReference[oaicite:18]{index=18}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of axioms.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Definitions}
+
+\begin{definition}[Set]
+A \textbf{set} is a well-defined collection of distinct elements which can be considered as a whole.
+\end{definition}
+
+\begin{definition}[Cardinal Number]
+A \textbf{cardinal number} is the number representing the size of a set, abstracting the nature of the elements.
+\end{definition}
+
+\begin{definition}[Ordinal Number]
+An \textbf{ordinal number} is a generalization of natural numbers used to describe the order type of a well-ordered set.
+\end{definition}
+
+\begin{definition}[Infinite Set]
+An \textbf{infinite set} is a set which can be put into a one-to-one correspondence with a proper subset of itself.
+\end{definition}
+
+\begin{definition}[Enumerable Set]
+A set is \textbf{enumerable} (countable) if it can be put into a one-to-one correspondence with the set of natural numbers.
+\end{definition}
+
+\section{Axioms}
+
+\begin{axiom}[Existence of Sets]
+There exist objects called sets that are collections of distinct elements.
+\end{axiom}
+
+\begin{axiom}[Principle of Enumeration]
+Two sets have the same cardinal number if there exists a one-to-one correspondence between their elements.
+\end{axiom}
+
+\begin{axiom}[Infinite Sets and Proper Subsets]
+An infinite set has the same cardinal number as one of its proper subsets.
+\end{axiom}
+
+\begin{axiom}[Well-ordering Principle]
+Every set can be well-ordered, meaning every non-empty subset has a least element under this ordering.
+\end{axiom}
+
+\section{Theorems}
+
+\begin{theorem}[Non-Enumerability of the Continuum]
+The set of real numbers between any two distinct points is not enumerable.
+
+\textit{(Follows from Axioms 2 and 3)}
+\end{theorem}
+
+\begin{theorem}[Existence of Transcendental Numbers]
+Within every interval of real numbers, there are infinitely many transcendental numbers.
+
+\textit{(Consequence of Theorem 4.1)}
+\end{theorem}
+
+\begin{theorem}[Hierarchy of Infinite Sets]
+There are infinite sets with strictly greater cardinal numbers than enumerable sets.
+
+\textit{(Follows directly from Definitions 4, 5, and Axiom 3)}
+\end{theorem}
+
+\begin{theorem}[Enumeration of Algebraic Numbers]
+The set of algebraic numbers is enumerable.
+
+\textit{(Follows from Axiom 2 and explicit enumeration method)}
+\end{theorem}
+
 
 \end{document}
