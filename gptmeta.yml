@@ -1,0 +1,24 @@
+name: Theory of Infinity Research
+description: |
+  This repository contains automation scripts and resources for generating
+  mathematical and philosophical research papers. It integrates AWS S3 for
+  file storage, Milvus as a vector database for document embeddings, and
+  OpenAI GPT-4o for content generation. GitHub Actions may be used for
+  workflow automation.
+components:
+  storage:
+    - type: aws_s3
+      bucket: your-research-bucket
+      purpose: store source documents and data
+  database:
+    - type: milvus
+      env: MILVUS_URI
+      purpose: store embeddings for semantic search
+  llm:
+    - provider: openai
+      model: gpt-4o
+      api_key_env: OPENAI_API_KEY
+  scripts:
+    - path: scripts/extract_and_embed.py
+      description: extract text from PDFs, generate embeddings, and insert
+        them into Milvus
