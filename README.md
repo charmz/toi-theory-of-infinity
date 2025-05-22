@@ -56,13 +56,25 @@ sudo apt-get install -y --no-install-recommends \
 
 The document preamble references **Libertinus Serif**, **Ezra SIL**, and
 **Noto Serif CJK SC**. These are available through the packages above, or they
-can be vendored inside a local `texmf/fonts/` directory and made available to
-TeX with:
+can be vendored directly inside this repository.  Create the following layout
+and drop the `.otf`/`.ttf` font files inside:
+
+```
+toi-theory-of-infinity/
+└─ texmf/
+   └─ fonts/
+      └─ opentype/...
+```
+
+After the fonts are in place, tell TeX where to look and refresh its cache:
 
 ```bash
 echo "export TEXMFHOME=\"$PWD/texmf\"" >> "$BASH_ENV"
 mktexlsr "$PWD/texmf"
 ```
+
+On CI, simply run those two commands after checking out the repository to make
+the vendored fonts available during the build.
 
 ### Building the PDF
 
