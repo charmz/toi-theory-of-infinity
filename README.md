@@ -35,3 +35,53 @@ This project integrates **GitHub**, **AWS S3**, **Milvus**, and **OpenAI GPT-4o*
 - AWS S3 for data storage.
 - Milvus for semantic context retrieval.
 - OpenAI (GPT-4o) for content analysis and generation.
+
+## LaTeX Toolchain Setup
+
+The repository includes source `.tex` files under `input/documents`. A minimal
+TeX tool-chain is required in order to build the PDF outputs.
+
+Install XeLaTeX along with language and font packages:
+
+```bash
+sudo apt-get install -y --no-install-recommends \
+  texlive-xetex texlive-latex-recommended texlive-latex-extra \
+  texlive-fonts-recommended texlive-fonts-extra texlive-lang-cjk \
+  latexmk fonts-sil-ezra fonts-noto-cjk
+```
+
+`latexmk` keeps the build invocation the same across platforms.
+
+### Bundling Required Fonts
+
+The document preamble references **Libertinus Serif**, **Ezra SIL**, and
+**Noto Serif CJK SC**. These are available through the packages above, or they
+can be vendored directly inside this repository.  Create the following layout
+and drop the `.otf`/`.ttf` font files inside:
+
+```
+toi-theory-of-infinity/
+└─ texmf/
+   └─ fonts/
+      └─ opentype/...
+```
+
+After the fonts are in place, tell TeX where to look and refresh its cache:
+
+```bash
+echo "export TEXMFHOME=\"$PWD/texmf\"" >> "$BASH_ENV"
+mktexlsr "$PWD/texmf"
+```
+
+On CI, simply run those two commands after checking out the repository to make
+the vendored fonts available during the build.
+
+### Building the PDF
+
+With the provided `latexmkrc`, a single command compiles the document:
+
+```bash
+latexmk -xelatex -synctex=1 -interaction=nonstopmode draft2.tex
+```
+
+Running just `latexmk` will pick up the options from `latexmkrc`.
